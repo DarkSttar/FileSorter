@@ -72,14 +72,7 @@ def scan_directory(folder: Path):
 if __name__ == '__main__':
     folder_process = sys.argv[1]
     scan_directory(Path(folder_process))
-    for item in JPEG_IMAGES:
-        print(f'JPEG => Full Name => {item}')
-    for item in JPG_IMAGES:
-        print(f'JPG => Full Name => {item}')
-    for item in PNG_IMAGES:
-        print(f'PNG => Full Name => {item}')
-    for item in SVG_IMAGES:
-        print(f'SVG => Full Name => {item}')
+    
 
     
     
