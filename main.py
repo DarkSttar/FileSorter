@@ -65,8 +65,12 @@ def main(folder: Path):
         print(f'FIND AMR ======> {item}')
     for item in Parser.OTHER_FILES:
         print(f'FIND OTHER FILES ======> {item}')
-    for item in Parser.ARCHIVES:
-        print(f'FIND ARCHIVES ======> {item}')
+    for item in Parser.ARCHIVES_ZIP:
+        print(f'FIND ZIP ======> {item}')
+    for item in Parser.ARCHIVES_GZ:
+        print(f'FIND GZ ======> {item}')
+    for item in Parser.ARCHIVES_TAR:
+        print(f'FIND TAR ======> {item}')
     
     for file in Parser.JPEG_IMAGES:
         handle_media(file, folder / 'Images' / 'JPEG')  
@@ -83,9 +87,7 @@ def main(folder: Path):
     for file in Parser.MOV_VIDEO:
         handle_media(file, folder / 'video' / 'MOV')
     for file in Parser.MKV_VIDEO:
-        handle_media(file, folder / 'video' / 'MKV')
-    for file in Parser.AVI_VIDEO:
-        handle_media(file, folder / 'video' / 'DOC')       
+        handle_media(file, folder / 'video' / 'MKV')      
     for file in Parser.DOC_DOCUMENTS:
         handle_media(file, folder / 'documents' / 'DOC')
     for file in Parser.DOCX_DOCUEMENTS:
@@ -108,8 +110,13 @@ def main(folder: Path):
         handle_media(file, folder / 'audio' / 'AMR')
     for file in Parser.OTHER_FILES:
         handle_media(file, folder / 'other')
-    for file in Parser.ARCHIVES:
-        handle_archive(file, folder / 'archives')
+    for file in Parser.ARCHIVES_ZIP:
+        handle_archive(file, folder / 'archives' / 'ZIP')
+    for file in Parser.ARCHIVES_GZ:
+        handle_archive(file, folder / 'archives' / 'targz')
+    for file in Parser.ARCHIVES_TAR :
+        handle_archive(file, folder / 'archives' / 'TAR')
+    
 
     for folder in Parser.FOLDERS[::-1]:
         try:
